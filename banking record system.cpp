@@ -52,6 +52,25 @@ void account_query::write_rec()
     outfile.write(reinterpret_cast<char *>(this), sizeof(*this));
     outfile.close();
 }
+void account_query::read_rec()
+{
+    ifstream infile;
+    infile.open("record.bank", ios::binary);
+    if(!infile)
+    {
+        cout<<"Error in Opening! File Not Found!!"<<endl;
+        return;
+    }
+    cout<<"\n****Data from file****"<<endl;
+    while(!infile.eof())
+    {
+        if(infile.read(reinterpret_cast<char*>(this), sizeof(*this))>0)
+        {
+            show_data();
+        }
+    }
+    infile.close();
+}
 int main()
 {
     account_query A;
