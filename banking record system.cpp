@@ -73,7 +73,8 @@ void account_query::read_rec()
 }
 void account_query::search_rec()
 {
-    int n;
+    int  n;
+    
     ifstream infile;
     infile.open("record.bank", ios::binary);
     if(!infile)
