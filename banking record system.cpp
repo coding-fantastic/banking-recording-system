@@ -44,6 +44,14 @@ void account_query::show_data()
     cout<<"Current Balance: Ksh.  "<<total_Balance<<endl;
     cout<<"-------------------------------"<<endl;
 }
+void account_query::write_rec()
+{
+    ofstream outfile;
+    outfile.open("record.bank", ios::binary|ios::app);
+    read_data();
+    outfile.write(reinterpret_cast<char *>(this), sizeof(*this));
+    outfile.close();
+}
 int main()
 {
     account_query A;
