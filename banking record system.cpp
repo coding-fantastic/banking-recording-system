@@ -53,7 +53,30 @@ int main()
         cout<<"\n\t6-->Quit";
         cout<<"\nEnter your choice: ";
         cin>>choice;
-        
+        switch(choice)
+        {
+        case 1:
+            A.write_rec();
+            break;
+        case 2:
+            A.read_rec();
+            break;
+        case 3:
+            A.search_rec();
+            break;
+        case 4:
+            A.edit_rec();
+            break;
+        case 5:
+            A.delete_rec();
+            break;
+        case 6:
+            exit(0);
+            break;
+        default:
+            cout<<"\nEnter corret choice";
+            exit(0);
+        }
     }
     system("pause");
     return 0;
