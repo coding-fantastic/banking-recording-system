@@ -36,7 +36,14 @@ void account_query::read_data()
     cin>>total_Balance;
     cout<<endl;
 }
-
+void account_query::show_data()
+{
+    cout<<"Account Number: "<<account_number<<endl;
+    cout<<"First Name: "<<firstName<<endl;
+    cout<<"Last Name: "<<lastName<<endl;
+    cout<<"Current Balance: Ksh.  "<<total_Balance<<endl;
+    cout<<"-------------------------------"<<endl;
+}
 int main()
 {
     account_query A;
